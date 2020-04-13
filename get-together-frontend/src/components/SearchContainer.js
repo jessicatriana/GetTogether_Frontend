@@ -5,8 +5,7 @@ class SearchContainer extends Component {
     render() {
         return (
             <div className="SearchContainer">
-       
-                <SearchBar searchWord={this.props.searchWord} handleChange={this.props.handleChange}/>
+                Rated the best app for meeting up with like-minded programmers - NY Times
             </div>
         );
     }

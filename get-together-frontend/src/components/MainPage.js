@@ -12,7 +12,6 @@ class MainPage extends Component {
     this.state = {
       meetups: [],
       searchWord: "",
-
     };
   }
 
@@ -23,7 +22,28 @@ class MainPage extends Component {
       .then((meetups) => {
         this.setState({ meetups });
       });
+
+      // USE this to login in and perist users to the db
+      fetch('http://localhost:3000/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          user: {
+            first_name: "jan",
+            email: "jan@jan.com",
+            password: "j",
+          }
+        })
+      })
+        .then(r => r.json())
+        .then(console.log)
   }
+
+
+
 
   handleChange = (event) => {
     console.log("Event Target Value is", event.target.value);
@@ -33,20 +53,26 @@ class MainPage extends Component {
   };
 
   render() {
-    const filteredMeetups = this.state.meetups.filter((meeting) => meeting.title.includes(
-      this.state.searchWord.charAt(0).toUpperCase() +
-                  this.state.searchWord.slice(1) || //capitalizes first letter of searchWord
-                  this.state.searchWord  // accepts exactly what was entered
-    ))
+    const filteredMeetups = this.state.meetups.filter((meeting) =>
+      meeting.topic.topic_name.includes(
+        this.state.searchWord ||
+          this.state.searchWord.charAt(0).toUpperCase() +
+            this.state.searchWord.slice(1)
+      )
+    );
+
     return (
       <div>
         THIS THE MAIN PAGE
-        <NavBar />
-        <SearchContainer
+        <NavBar
           searchWord={this.state.searchWord}
           handleChange={this.handleChange}
         />
-        <AllThree meetups={this.state.meetups} filteredMeetups={filteredMeetups}/>
+        <SearchContainer />
+        <AllThree
+          meetups={this.state.meetups}
+          filteredMeetups={filteredMeetups}
+        />
         <Footer />
       </div>
     );
