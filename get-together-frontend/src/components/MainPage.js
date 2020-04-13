@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import MeetupList from './MeetupList'
-import NavBar from './NavBar'
-import Footer from './Footer'
-import SearchContainer from './SearchContainer'
-import LeftComponent from './LeftComponent'
-import RightComponent from './RightComponent'
+import MeetupList from "./MeetupList";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+import SearchContainer from "./SearchContainer";
+import AllThree from "./AllThree";
 
 class MainPage extends Component {
   constructor() {
@@ -12,6 +11,8 @@ class MainPage extends Component {
 
     this.state = {
       meetups: [],
+      searchWord: "",
+
     };
   }
 
@@ -24,18 +25,32 @@ class MainPage extends Component {
       });
   }
 
-  render() {
+  handleChange = (event) => {
+    console.log("Event Target Value is", event.target.value);
+    this.setState({
+      searchWord: event.target.value,
+    });
+  };
 
-    return <div>
-        Main Page
-        <NavBar/>
-        <SearchContainer/>
-        <LeftComponent />
-        <MeetupList meetups={this.state.meetups}/>
-        <RightComponent/>
+  render() {
+    const filteredMeetups = this.state.meetups.filter((meeting) => meeting.title.includes(
+      this.state.searchWord.charAt(0).toUpperCase() +
+                  this.state.searchWord.slice(1) || //capitalizes first letter of searchWord
+                  this.state.searchWord  // accepts exactly what was entered
+    ))
+    return (
+      <div>
+        THIS THE MAIN PAGE
+        <NavBar />
+        <SearchContainer
+          searchWord={this.state.searchWord}
+          handleChange={this.handleChange}
+        />
+        <AllThree meetups={this.state.meetups} filteredMeetups={filteredMeetups}/>
         <Footer />
-        </div>;
+      </div>
+    );
   }
 }
 
-export default MainPage
+export default MainPage;

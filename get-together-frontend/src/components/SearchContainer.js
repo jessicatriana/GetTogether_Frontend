@@ -4,9 +4,9 @@ import SearchBar from './SearchBar'
 class SearchContainer extends Component {
     render() {
         return (
-            <div>
-                Search Container
-                <SearchBar/>
+            <div className="SearchContainer">
+       
+                <SearchBar searchWord={this.props.searchWord} handleChange={this.props.handleChange}/>
             </div>
         );
     }

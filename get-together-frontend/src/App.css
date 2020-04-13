@@ -36,3 +36,72 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  color: #FFFFFF ;
+  background-color: #000000;
+  text-align: right;
+}
+
+.RightLinks {
+  background-color: #FFFFFF;
+}
+
+.SearchContainer {
+  background-color: #FFFFFF;
+  border: 1px dashed;
+  padding: 10px;
+  margin: 5px;
+}
+
+.AllThree {
+  width: 100%;
+  float: center;
+  margin: auto;
+  /* background-color:red; */
+}
+
+.LeftComponent {
+  background-color: #FFFFFF;
+  border: 1px dashed;
+  width: 20%;
+  float: left;
+  padding: 20px;
+  margin: 10px;
+}
+
+.CenterComponent {
+  background-color: white;
+  /* border: 1px dashed; */
+  width: 50%;
+  float: left;
+  padding: 20px;
+  margin: 10px;
+}
+
+.RightComponent {
+  background-color: #FFFFFF;
+  border: 1px dashed;
+  width: 20%;
+  /* height: 800px; */
+  float: left;
+  padding: 20px;
+  margin: 10px;
+}
+
+.Footer{
+  background-color: #FFFFFF;
+  /* border: 1px dashed; */
+  padding: 20px;
+  margin: 10px;
+}
+
+.MeetupCard {
+  background-color:gray;
+  border: 1px dashed;
+  padding: 20px;
+  margin: 10px;
+
+
+}
+
