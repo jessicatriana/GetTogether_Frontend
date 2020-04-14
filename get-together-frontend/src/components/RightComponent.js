@@ -4,7 +4,7 @@ class RightComponent extends Component {
     render() {
         return (
             <div className="RightComponent">
-                <hi>"User"'s Fav Topics:</hi>
+                <h1>"User"'s Fav Topics:</h1>
             </div>
         );
     }

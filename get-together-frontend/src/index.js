@@ -4,29 +4,21 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import MeetupList from '../src/components/MeetupList'
-import NavBar from '../src/components/NavBar'
-import Footer from '../src/components/Footer'
-import SearchContainer from '../src/components/SearchContainer'
-import LeftComponent from '../src/components/LeftComponent'
-import RightComponent from '../src/components/RightComponent'
-import CenterComponent from '../src/components/CenterComponent'
-import Signup from '../src/components/Signup'
-import Login from '../src/components/Login'
-import Profile from '../src/components/Profile'
-import MainPage from '../src/components/MainPage'
+import Signup from "../src/components/Signup";
+import Login from "../src/components/Login";
+import Profile from "../src/components/Profile";
+import MainPage from "../src/components/MainPage";
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      
-      <Route exact path="/login" component={Login}/>
-      <Route exact path="/profile" component={Profile}/>
-      <Route exact path="/main" component={MainPage}/>
-      <Route exact path="/signup" component={Signup}/>
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/main" component={MainPage} />
+      <Route exact path="/signup" component={Signup} />
       <Route exact path="/" component={App} />
     </React.StrictMode>
-  // </Router>,
+  </Router>,
   document.getElementById("root")
 );
 
