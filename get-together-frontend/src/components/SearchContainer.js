@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import SearchBar from './SearchBar'
+import React, { Component } from "react";
 
 class SearchContainer extends Component {
-    render() {
-        return (
-            <div className="SearchContainer">
-                Rated the best app for meeting up with like-minded programmers - NY Times
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="SearchContainer" style={{fontStyle: "italic"}}>
+      "The best app for meeting like-minded programmers..." - NY Times
+       
+      </div>
+    );
+  }
 }
 
 export default SearchContainer;

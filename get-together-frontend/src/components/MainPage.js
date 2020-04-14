@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import MeetupList from "./MeetupList";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import SearchContainer from "./SearchContainer";
