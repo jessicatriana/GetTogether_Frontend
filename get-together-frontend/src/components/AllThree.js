@@ -9,7 +9,7 @@ class AllThree extends Component {
             <div className="AllThree">
         <LeftComponent meetups={this.props.meetups}/>
         <CenterComponent meetups={this.props.meetups} filteredMeetups={this.props.filteredMeetups}/>
-        <RightComponent/>
+        <RightComponent user={[]} />
             </div>
         );
     }

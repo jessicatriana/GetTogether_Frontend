@@ -4,6 +4,8 @@ import Footer from "./Footer";
 import SearchContainer from "./SearchContainer";
 import AllThree from "./AllThree";
 
+const userId = 0;
+
 class MainPage extends Component {
   constructor() {
     super();
