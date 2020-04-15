@@ -7,6 +7,7 @@ class SearchContainerProfile extends Component {
         style={{ fontStyle: "italic", textAlign: "center" }}
       >
         "The best app for meeting like-minded programmers..." - NY Times
+        
       </div>
     );
   }

@@ -4,6 +4,8 @@ import Flippy, { FrontSide, BackSide } from "react-flippy";
 class TestCard extends Component {
   render() {
     return (
+      <div onClick={() => this.props.joinMeetup(this.props.meetup)}
+      >
       <Flippy
         className="Flippy"
         flipOnHover={true} // default false
@@ -41,6 +43,7 @@ class TestCard extends Component {
           <h5>Topic: {this.props.meetup.topic.topic_name}</h5>
         </BackSide>
       </Flippy>
+      </div>
     );
   }
 }

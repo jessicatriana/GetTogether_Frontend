@@ -21,14 +21,25 @@ class Profile extends Component {
             this.setState({ user });
           });
     }
+
+    rerender = () => {
+        const API = `http://localhost:3000/users/${window.userId}`;
+        fetch(API)
+          .then((response) => response.json())
+          .then((user) => {
+            this.setState({ user });
+          });
+    }
+
     render() {
+        
         return (
             <div>
                 THIS IS THE PROFILE PAGE
-                <NavBar />
-                <SearchContainerProfile />
-                <AllThreeProfile userInfo={this.state.user} />
-                <Footer />
+                <NavBar userInfo={this.state.user}/>
+                <SearchContainerProfile userInfo={this.state.user}/>
+                <AllThreeProfile userInfo={this.state.user} rerender={this.rerender}/>
+                <Footer userInfo={this.state.user}/>
             </div>
         );
     }

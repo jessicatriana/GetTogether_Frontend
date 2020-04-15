@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import MainPage from "./MainPage";
 import { Redirect } from "react-router-dom";
 import SearchContainer from "./SearchContainer";
-import SearchBar from "./SearchBar";
-import NavBar from "./NavBar";
-import Footer from './Footer'
+import Footer from "./Footer";
+import ProfileNavBar from "./ProfileNavBar";
 
 class Signin extends Component {
   constructor(props) {
@@ -30,7 +28,6 @@ class Signin extends Component {
   };
 
   handleSubmit = (event) => {
-    alert("A name was submitted: " + this.state.first_name);
     event.preventDefault();
 
     const body = this.state;
@@ -47,7 +44,7 @@ class Signin extends Component {
     fetch(`http://localhost:3000/users/login`, configObj)
       .then((resp) => resp.json())
       .then((user) => {
-        // console.log(user);
+
         if (user.id === undefined || user.id === 0) {
           console.log("Not logged in");
         } else {
@@ -65,15 +62,15 @@ class Signin extends Component {
       <div>
         THIS IS THE SIGN IN PAGE
         <div className="NavBar">
-          <NavBar />
+          <ProfileNavBar />
           <SearchContainer />
           <div className="Logo">
             <img src="/logo1.png" alt="logo" width="100" />
           </div>
         </div>
-
         <div className="Signin">
-          Sign In
+          <h1>Sign In</h1>
+
           <form onSubmit={this.handleSubmit}>
             <label>First Name:</label>
             <input
@@ -81,19 +78,23 @@ class Signin extends Component {
               value={this.state.first_name}
               onChange={this.handleNameChange}
             />
+            <br />
             <label>Email:</label>
             <input
               type="text"
               value={this.state.email}
               onChange={this.handleEmailChange}
             />
+            <br />
             <label>Password:</label>
             <input
               type="text"
               value={this.state.password}
               onChange={this.handlePasswordChange}
             />
-            <input type="submit" />
+            <br />
+            <br />
+            <input type="submit" className="Submit" />
           </form>
         </div>
         <Footer />

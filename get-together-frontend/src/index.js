@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Signup from "../src/components/Signup";
@@ -18,7 +17,7 @@ ReactDOM.render(
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/main" component={MainPage} />
       <Route exact path="/signup" component={Signup} />
-      <Route exact path="/" component={App} />
+      <Route exact path="/" component={Signin} />
     </React.StrictMode>
   </Router>,
   document.getElementById("root")

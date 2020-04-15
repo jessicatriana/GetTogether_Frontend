@@ -9,7 +9,14 @@ class MeetupList extends Component {
           <div className="column">
             {" "}
             {this.props.meetups.map((meetup) => {
-              return <TestCard key={meetup.id} meetup={meetup} />;
+              return (
+                <TestCard
+                  key={meetup.id}
+                  meetup={meetup}
+                  joinMeetup={this.props.joinMeetup}
+                  
+                />
+              );
             })}
           </div>
         </div>

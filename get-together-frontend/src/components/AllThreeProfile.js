@@ -11,12 +11,13 @@ class AllThreeProfile extends Component {
       email: this.props.userInfo.email,
       password: this.props.userInfo.password,
       meetups: this.props.userInfo.meetups,
+      topics: this.props.userInfo.topics,
     };
     return (
       <div className="AllThree">
-        <LeftComponentProfile userMeetups={user.meetups} />
+        <LeftComponentProfile userMeetups={user.meetups} rerender={this.props.rerender}/>
         <CenterComponentProfile userDetails={user} />
-        <RightComponent userTopics={this.props.userInfo.topics} user={user} />
+        <RightComponent userTopics={this.props.userInfo.topics} user={this.props.userInfo} />
       </div>
     );
   }

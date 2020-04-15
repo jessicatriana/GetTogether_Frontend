@@ -13,6 +13,9 @@ class MainPage extends Component {
     this.state = {
       meetups: [],
       searchWord: "",
+      user: {},
+      comments: [],
+      clickedMeetup: null
     };
   }
 
@@ -41,9 +44,20 @@ class MainPage extends Component {
       })
         .then(r => r.json())
         .then(console.log)
+
+        fetch(`http://localhost:3000/users/${window.userId}`)
+        .then((response) => response.json())
+        .then((user) => {
+          this.setState({ user });
+        });
+
+        fetch(`http://localhost:3000/comments`)
+        .then((response) => response.json())
+        .then((comments) => {
+          this.setState({ comments });
+        });
+  
   }
-
-
 
 
   handleChange = (event) => {
@@ -52,6 +66,13 @@ class MainPage extends Component {
       searchWord: event.target.value,
     });
   };
+
+  joinMeetup = (meetup) => {
+    console.log("join", meetup.id)
+    this.setState({
+      clickedMeetup: meetup
+    })
+  }
 
   render() {
     const filteredMeetups = this.state.meetups.filter((meeting) =>
@@ -73,6 +94,10 @@ class MainPage extends Component {
         <AllThree
           meetups={this.state.meetups}
           filteredMeetups={filteredMeetups}
+          user={this.state.user}
+          comments={this.state.comments}
+          joinMeetup={this.joinMeetup}
+          clickedMeetup={this.state.clickedMeetup}
         />
         <Footer />
       </div>
