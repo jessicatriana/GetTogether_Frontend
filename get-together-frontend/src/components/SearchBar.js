@@ -6,8 +6,8 @@ class SearchBar extends Component {
       <div>
         <form>
           <label>
-          <span class="iconify" data-icon="et-magnifying-glass" data-inline="false"></span>
-          Search by Topic or Meetup:
+          <span className="iconify" data-icon="et-magnifying-glass" data-inline="false"></span>
+          Search for a Meetup:
             <input
               type="text"
               name="name"

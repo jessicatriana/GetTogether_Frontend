@@ -73,7 +73,7 @@
 
 .LeftComponent {
   background-color: #FFFFFF;
-  /* text-align: left; */
+  text-align: center;
   width: 20%;
   float: left;
   padding: 30px;
@@ -95,6 +95,7 @@
   float: left;
   padding: 30px;
   margin: 10px;
+  text-align: center;
 }
 
 .Footer{
@@ -105,6 +106,7 @@
   bottom: 0;
   width: 100%;
   height: 40px;
+  text-align: center;
 }
 
 .NavLinks {
@@ -116,7 +118,14 @@
 .Logo {
   left:0;
   float: left;
-  margin-right: 470px;
+  margin-right: 270px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.Logo:hover {
+-webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
 }
 
 .SearchBar {
@@ -127,8 +136,10 @@
   width: 400px;
 }
 
+
 .Submit {
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .FlipCard{
@@ -162,15 +173,42 @@
 }
 
 .Flippy {
-  background-color: gray;
   z-index: 8888;
   border-radius: 15px;
+  text-align: center;
 }
 
 .MeetupCard {
-  background-color: rgb(194, 189, 189);
-  border: 1px dashed;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 15px;
+  background-color: rgb(145, 42, 42);
+  /* background-color: rgb(194, 189, 189); */
+  padding: 10px;
+  margin: 15px;
+  border-radius: 100px 0px;
+  text-align: center;
+  color: white;
+  height: 40px;
+  opacity:0.5;
 }
+
+  
+  .MeetupCard:hover {
+    opacity:1;
+    border-radius:50%;
+    cursor: pointer;
+  }
+
+  a:link, a:visited {
+    color: black;
+    padding: 1px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  a:hover, a:active {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    cursor: pointer;
+  }

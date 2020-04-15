@@ -1,30 +1,33 @@
 import React, { Component } from "react";
-import MainPage from './MainPage'
-import { Redirect } from 'react-router-dom'
+import MainPage from "./MainPage";
+import { Redirect } from "react-router-dom";
+import SearchContainer from "./SearchContainer";
+import SearchBar from "./SearchBar";
+import NavBar from "./NavBar";
+import Footer from './Footer'
 
 class Signin extends Component {
   constructor(props) {
-      super(props)
+    super(props);
     this.state = {
       first_name: "",
       email: "",
       password: "",
-      loggedIn: false
+      loggedIn: false,
     };
-
   }
 
   handleNameChange = (event) => {
     this.setState({ first_name: event.target.value });
-  }
+  };
 
   handleEmailChange = (event) => {
     this.setState({ email: event.target.value });
-  }
+  };
 
   handlePasswordChange = (event) => {
     this.setState({ password: event.target.value });
-  }
+  };
 
   handleSubmit = (event) => {
     alert("A name was submitted: " + this.state.first_name);
@@ -46,49 +49,57 @@ class Signin extends Component {
       .then((user) => {
         // console.log(user);
         if (user.id === undefined || user.id === 0) {
-            console.log("Not logged in")
+          console.log("Not logged in");
         } else {
-        console.log("login")
-            this.setState({ loggedIn: true})
-            window.userId = user.id
+          console.log("login");
+          this.setState({ loggedIn: true });
+          window.userId = user.id;
         }
-    }
-         )
-}
-
-
+      });
+  };
 
   render() {
-   
-    return (
-        this.state.loggedIn ?  <Redirect to='/main' things={this.state}/> : 
+    return this.state.loggedIn ? (
+      <Redirect to="/main" things={this.state} />
+    ) : (
       <div>
-        Sign In
-        <form onSubmit={this.handleSubmit}>
-          <label>First Name:</label>
-          <input
-            type="text"
-            value={this.state.first_name}
-            onChange={this.handleNameChange}
-          />
-          <label>Email:</label>
-          <input
-            type="text"
-            value={this.state.email}
-            onChange={this.handleEmailChange}
-          />
-          <label>Password:</label>
-          <input
-            type="text"
-            value={this.state.password}
-            onChange={this.handlePasswordChange}
-          />
-          <input type="submit"/>
-        </form>
+        THIS IS THE SIGN IN PAGE
+        <div className="NavBar">
+          <NavBar />
+          <SearchContainer />
+          <div className="Logo">
+            <img src="/logo1.png" alt="logo" width="100" />
+          </div>
+        </div>
+
+        <div className="Signin">
+          Sign In
+          <form onSubmit={this.handleSubmit}>
+            <label>First Name:</label>
+            <input
+              type="text"
+              value={this.state.first_name}
+              onChange={this.handleNameChange}
+            />
+            <label>Email:</label>
+            <input
+              type="text"
+              value={this.state.email}
+              onChange={this.handleEmailChange}
+            />
+            <label>Password:</label>
+            <input
+              type="text"
+              value={this.state.password}
+              onChange={this.handlePasswordChange}
+            />
+            <input type="submit" />
+          </form>
+        </div>
+        <Footer />
       </div>
-       
     );
-  };
-};
+  }
+}
 
 export default Signin;

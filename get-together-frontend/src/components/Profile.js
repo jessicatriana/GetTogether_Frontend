@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ProfileNavBar from "./ProfileNavBar";
+import NavBar from "./NavBar";
+// import ProfileNavBar from "./ProfileNavBar";
 import Footer from "./Footer";
 import AllThreeProfile from "./AllThreeProfile";
 import SearchContainerProfile from './SearchContainerProfile';
@@ -23,7 +24,8 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                <ProfileNavBar />
+                THIS IS THE PROFILE PAGE
+                <NavBar />
                 <SearchContainerProfile />
                 <AllThreeProfile userInfo={this.state.user} />
                 <Footer />

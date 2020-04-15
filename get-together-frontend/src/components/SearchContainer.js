@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class SearchContainer extends Component {
   render() {
     return (
-      <div className="SearchContainer" style={{fontStyle: "italic"}}>
+      <div className="SearchContainer" style={{fontStyle: "italic", textAlign: "center"}}>
       "The best app for meeting like-minded programmers..." - NY Times
        
       </div>

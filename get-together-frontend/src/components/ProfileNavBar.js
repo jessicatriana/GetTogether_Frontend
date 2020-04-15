@@ -17,9 +17,14 @@ class ProfileNavBar extends Component {
           />
         </div>
         <div className="NavLinks">
-          <NavLink to="/main" exact activeStyle={{ color: "blue" }}>
-            Main Page
+        <NavLink to="/main" exact activeStyle={{ color: "blue" }}>
+            Home
           </NavLink>
+          <br></br>
+          <NavLink to="/profile" exact activeStyle={{ color: "blue" }}>
+            Profile
+          </NavLink>
+          <br></br>
           <NavLink to="/signin" exact activeStyle={{ color: "blue" }}>
             Log Out
           </NavLink>
