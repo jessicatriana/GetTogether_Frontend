@@ -15,7 +15,7 @@ class MainPage extends Component {
       searchWord: "",
       user: {},
       comments: [],
-      clickedMeetup: null
+      clickedMeetup: null,
     };
   }
 
@@ -27,38 +27,27 @@ class MainPage extends Component {
         this.setState({ meetups });
       });
 
-      // USE this to login in and perist users to the db
-      fetch('http://localhost:3000/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify({
-          user: {
-            first_name: "jan",
-            email: "jan@jan.com",
-            password: "j",
-          }
-        })
-      })
-        .then(r => r.json())
-        .then(console.log)
+    fetch(`http://localhost:3000/users/${window.userId}`)
+      .then((response) => response.json())
+      .then((user) => {
+        this.setState({ user });
+      });
 
-        fetch(`http://localhost:3000/users/${window.userId}`)
-        .then((response) => response.json())
-        .then((user) => {
-          this.setState({ user });
-        });
-
-        fetch(`http://localhost:3000/comments`)
-        .then((response) => response.json())
-        .then((comments) => {
-          this.setState({ comments });
-        });
-  
+    fetch(`http://localhost:3000/comments`)
+      .then((response) => response.json())
+      .then((comments) => {
+        this.setState({ comments });
+      });
   }
 
+  rerender = (clickedMeetup) => {
+    fetch(`http://localhost:3000/meetups/${clickedMeetup.id}`)
+      .then((response) => response.json())
+      .then((meetup) => {console.log(meetup) 
+        this.setState({ clickedMeetup: meetup });
+      });
+      
+  };
 
   handleChange = (event) => {
     console.log("Event Target Value is", event.target.value);
@@ -68,11 +57,11 @@ class MainPage extends Component {
   };
 
   joinMeetup = (meetup) => {
-    console.log("join", meetup.id)
+    console.log("join", meetup.id);
     this.setState({
-      clickedMeetup: meetup
-    })
-  }
+      clickedMeetup: meetup,
+    });
+  };
 
   render() {
     const filteredMeetups = this.state.meetups.filter((meeting) =>
@@ -98,6 +87,7 @@ class MainPage extends Component {
           comments={this.state.comments}
           joinMeetup={this.joinMeetup}
           clickedMeetup={this.state.clickedMeetup}
+          rerender={this.rerender}
         />
         <Footer />
       </div>

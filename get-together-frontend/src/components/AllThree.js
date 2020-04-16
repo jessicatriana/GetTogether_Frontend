@@ -5,7 +5,6 @@ import CenterComponent from "./CenterComponent";
 import MeetupDetails from "./MeetupDetails";
 
 class AllThree extends Component {
-    
   render() {
     return (
       <div className="AllThree">
@@ -18,8 +17,10 @@ class AllThree extends Component {
           filteredMeetups={this.props.filteredMeetups}
           joinMeetup={this.props.joinMeetup}
         />
-        <MeetupDetails clickedMeetup={this.props.clickedMeetup} />
-        {/* <RightComponent user={this.props.user} /> */}
+        <MeetupDetails
+          clickedMeetup={this.props.clickedMeetup}
+          rerender={this.props.rerender}
+        />
       </div>
     );
   }

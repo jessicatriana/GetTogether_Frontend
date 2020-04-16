@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import NavBar from "./NavBar";
-// import ProfileNavBar from "./ProfileNavBar";
 import Footer from "./Footer";
 import AllThreeProfile from "./AllThreeProfile";
 import SearchContainerProfile from './SearchContainerProfile';
-
 
 class Profile extends Component {
     constructor() {

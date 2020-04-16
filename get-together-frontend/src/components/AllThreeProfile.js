@@ -2,8 +2,20 @@ import React, { Component } from "react";
 import LeftComponentProfile from "./LeftComponentProfile";
 import RightComponent from "./RightComponent";
 import CenterComponentProfile from "./CenterComponentProfile";
+import NewMeetupForm from "./NewMeetupForm";
 
 class AllThreeProfile extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      clicked: false,
+    };
+  }
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked });
+  };
+
   render() {
     const user = {
       id: this.props.userInfo.id,
@@ -15,9 +27,24 @@ class AllThreeProfile extends Component {
     };
     return (
       <div className="AllThree">
-        <LeftComponentProfile userMeetups={user.meetups} rerender={this.props.rerender}/>
-        <CenterComponentProfile userDetails={user} />
-        <RightComponent userTopics={this.props.userInfo.topics} user={this.props.userInfo} />
+        <LeftComponentProfile
+          userMeetups={user.meetups}
+          rerender={this.props.rerender}
+        />
+        {this.state.clicked ? (
+          <NewMeetupForm rerender={this.props.rerender}/>
+        ) : (
+          <CenterComponentProfile
+            userDetails={user}
+            handleClick={this.handleClick}
+            rerender={this.props.rerender}
+          />
+        )}
+
+        <RightComponent
+          userTopics={this.props.userInfo.topics}
+          user={this.props.userInfo}
+        />
       </div>
     );
   }

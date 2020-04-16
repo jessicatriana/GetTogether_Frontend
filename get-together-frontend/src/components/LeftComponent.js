@@ -8,7 +8,6 @@ class LeftComponent extends Component {
                 
                 <div className="ScrollingList">
                 <marquee direction="up" behavior="scroll">
-                {/* <h1 style={{textAlign:"center"}}>Newsfeed</h1> */}
                 {this.props.comments.map(comment => {
                     return <CommentCard key={comment.id} comment={comment} />
                 })}
