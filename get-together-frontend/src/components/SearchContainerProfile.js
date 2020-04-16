@@ -6,8 +6,9 @@ class SearchContainerProfile extends Component {
         className="SearchContainer"
         style={{ fontStyle: "italic", textAlign: "center" }}
       >
-        "The best app for meeting like-minded programmers..." - NY Times
-        
+        <marquee behavior="scroll" direction="left">
+          "The best app for meeting like-minded programmers..." - NY Times
+        </marquee>
       </div>
     );
   }

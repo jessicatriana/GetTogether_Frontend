@@ -8,7 +8,7 @@ class NavBar extends Component {
     return (
       <div className="NavBar">
         <div className="Logo">
-          <img src="/logo3.png" alt="logo" width="300" />
+          <img src="/logo6.png" alt="logo" width="300" />
         </div>
         <div className="SearchBar">
           <SearchBar

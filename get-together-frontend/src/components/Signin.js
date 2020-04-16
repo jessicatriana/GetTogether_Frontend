@@ -69,7 +69,7 @@ class Signin extends Component {
           </div>
         </div>
         <div className="Signin">
-          <h1>Sign In</h1>
+          <h1>Sign in:</h1>
 
           <form onSubmit={this.handleSubmit}>
             <label>First Name:</label>

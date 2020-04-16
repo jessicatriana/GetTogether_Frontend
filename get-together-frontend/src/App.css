@@ -142,6 +142,12 @@
   cursor: pointer;
 }
 
+.Submit:hover {
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: lightgray;
+}
+
 .FlipCard{
   background-color: transparent;
   width: 300px;
@@ -179,10 +185,10 @@
 }
 
 .MeetupCard {
-  background-color: rgb(145, 42, 42);
-  /* background-color: rgb(194, 189, 189); */
+  background-color: black;
   padding: 10px;
   margin: 15px;
+  margin-bottom: 40px;
   border-radius: 100px 0px;
   text-align: center;
   color: white;
@@ -190,7 +196,6 @@
   opacity:0.5;
 }
 
-  
   .MeetupCard:hover {
     opacity:1;
     border-radius:50%;
@@ -234,23 +239,43 @@
     padding: 30px;
     margin-top: 220px;
     column-count: 2;
-
   }
 
   .CommentCard:hover {
-    -webkit-transform: scale(1.1);
+    /* -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    color: rgb(104, 27, 27);
+    transform: scale(1.1); */
+    font-weight: 700;
   }
-
-
 
   .MeetupDetails {
     text-align: center;
     margin-right: 30px;
     margin-top: 50px;
     margin-left: 30px;
-    
-  
+  }
+
+  .CenterComponentProfile {
+    background-color: white;
+    width: 40%;
+    float: left;
+    padding: 30px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .ScrollingList {
+    padding-top: 600px;
+    animation: marquee infinite 60s linear;
+  }
+
+  @keyframes marquee {
+    0%   { 
+      -moz-transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0); }
+      100% { 
+      -moz-transform: translate(0, -100%);
+      -webkit-transform: translate(0, -100%);
+      transform: translate(0, -100%); }
   }

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class MeetupDetails extends Component {
   handleClick = (clickedMeetup) => {
     console.log("button clicked");
+    alert("Meetup Saved!")
 
     const body = { user_id: window.userId, meetup_id: clickedMeetup.id };
 

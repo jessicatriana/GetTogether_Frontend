@@ -19,7 +19,7 @@ class LeftComponentProfile extends Component {
 
   leaveMeetup = (meetup) => {
     console.log("leave button clicked");
-
+    alert("Meetup removed!")
     const body = { user_id: window.userId, meetup_id: meetup.id };
 
     const configObj = {
@@ -43,7 +43,7 @@ class LeftComponentProfile extends Component {
     console.log(this.props.userMeetups);
     return (
       <div className="LeftComponent">
-        <h1>New Meetups!</h1>
+        <h1>Your Meetups</h1>
         {this.props.userMeetups &&
           this.props.userMeetups.map((m) => {
             return (
