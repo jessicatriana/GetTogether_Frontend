@@ -8,7 +8,7 @@ class SearchBar extends Component {
           <label>
           <span className="iconify" data-icon="et-magnifying-glass" data-inline="false"></span>
           Search for a Meetup:
-            <input
+            <input  className="Search"
               type="text"
               name="name"
               onChange={(event) => this.props.handleChange(event)}

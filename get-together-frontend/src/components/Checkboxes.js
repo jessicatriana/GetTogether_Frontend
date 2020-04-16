@@ -38,14 +38,18 @@ class Checkboxes extends Component {
           {this.state.topics.map((topic) => {
             return (
               <div>
-                <label>{topic.topic_name}</label>
-                <input
-                  key={topic.id}
-                  type="checkbox"
-                  className="Checkbox"
-                  value={topic.topic_name}
-                  onClick={() => this.handleChange(topic)}
-                />
+                <label className="checkbox">
+                  
+                  <input
+                    key={topic.id}
+                    type="checkbox"
+                    className="Checkbox"
+                    value={topic.topic_name}
+                    onClick={() => this.handleChange(topic)}
+                  />
+                  <span class="checkmark"></span>
+                  {topic.topic_name}
+                </label>
               </div>
             );
           })}

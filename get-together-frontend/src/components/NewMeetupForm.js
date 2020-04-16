@@ -66,45 +66,46 @@ class NewMeetupForm extends Component {
       <div className="CenterComponentProfile">
         <div className="SpacingDiv">
           <div className="UserProfile">
-            <form onSubmit={this.handleSubmit}>
+            <form className="OutsideForm" onSubmit={this.handleSubmit}>
               <h1>New Meetup Form</h1>
               <label>Title</label>
-              <input
+              <input className="MeetupForm" 
                 type="text"
                 value={this.state.title}
                 onChange={this.handleTitleChange}
               ></input>
               <br />
               <label>Date</label>
-              <input
+              <input  className="MeetupForm"
                 type="text"
                 value={this.state.date}
                 onChange={this.handleDateChange}
               ></input>
               <br />
               <label>Time</label>
-              <input
+              <input  className="MeetupForm"
                 ttype="text"
                 value={this.state.time}
                 onChange={this.handleTimeChange}
               ></input>
               <br />
               <label>Location</label>
-              <input
+              <input  className="MeetupForm"
                 type="text"
                 value={this.state.location}
                 onChange={this.handleLocationChange}
               ></input>
               <br />
               <label>Image URL</label>
-              <input
+              <input  className="MeetupForm"
                 type="text"
                 value={this.state.image}
                 onChange={this.handleImgURLChange}
               ></input>
               <br />
               <label>Topic</label>
-              <select id="topics" onChange={this.handleTopicChange}>
+
+              <select className="MeetupForm" id="topics" onChange={this.handleTopicChange}>
                 <option value="" selected disabled hidden>
                   Choose Topic
                 </option>
@@ -121,10 +122,11 @@ class NewMeetupForm extends Component {
                 <option value="11">Bootstrap</option>
                 <option value="12">SQL</option>
               </select>
+
               <br />
               <br />
               <br />
-              <input type="submit"></input>
+              <input type="submit" className="Submit"></input>
             </form>
           </div>
         </div>

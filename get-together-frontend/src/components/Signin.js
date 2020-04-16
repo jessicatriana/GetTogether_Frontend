@@ -74,6 +74,7 @@ class Signin extends Component {
           <form onSubmit={this.handleSubmit}>
             <label>First Name:</label>
             <input
+            className="SignInForm"
               type="text"
               value={this.state.first_name}
               onChange={this.handleNameChange}
@@ -81,6 +82,7 @@ class Signin extends Component {
             <br />
             <label>Email:</label>
             <input
+            className="SignInForm"
               type="text"
               value={this.state.email}
               onChange={this.handleEmailChange}
@@ -88,6 +90,7 @@ class Signin extends Component {
             <br />
             <label>Password:</label>
             <input
+            className="SignInForm"
               type="text"
               value={this.state.password}
               onChange={this.handlePasswordChange}

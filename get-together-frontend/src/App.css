@@ -137,6 +137,11 @@
 }
 
 
+
+.Search:focus {
+  width: 100%;
+}
+
 .Submit {
   border-radius: 10px;
   cursor: pointer;
@@ -229,22 +234,21 @@
     padding: 30px;
     margin: 10px;
     margin-left: 200px;
-  
   }
 
   .Checkboxes {
     float: left;
     width: 30%;
-    float: left;
     padding: 30px;
     margin-top: 220px;
     column-count: 2;
   }
 
   .CommentCard:hover {
-    /* -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1); */
+    font-weight: 700;
+  }
+
+  .RightComponent:hover {
     font-weight: 700;
   }
 
@@ -279,3 +283,99 @@
       -webkit-transform: translate(0, -100%);
       transform: translate(0, -100%); }
   }
+
+  .CreateMeetupBtn {
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .CreateMeetupBtn:hover {
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+  }
+
+  .MeetupForm {
+    width: 60%;
+    padding: 5px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .MeetupForm:focus {
+    border: 2px solid black;
+  }
+
+  .OutsideForm {
+    border: 10px solid;
+    margin: 10px; 
+    padding: 10px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+  }
+
+  .OutsideForm:hover {
+    opacity:1;
+  }
+
+  .SignInForm {
+    width: 30%;
+    padding: 5px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .SignInForm:focus {
+    border: 2px solid black;
+  }
+
+  .SignUpInput {
+    width: 30%;
+    padding: 5px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .SignUpInput:focus {
+    border: 2px solid black;
+  }
+
+  .checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox > span {
+    color: #34495E;
+    padding: 0.5rem 0.23rem;
+}
+
+.checkbox > input {
+    height: 20px;
+    width: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid white;
+    border-radius: 15px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: black;
+    cursor: pointer;
+  }
+
+.checkbox > input:checked {
+    border: 5px solid black;
+    background-color: white;
+}
+
+.checkbox > input:active {
+    border: 2px solid #34495E;
+}
