@@ -73,7 +73,7 @@
 
 .LeftComponent {
   background-color: #FFFFFF;
-  /* text-align: left; */
+  text-align: center;
   width: 20%;
   float: left;
   padding: 30px;
@@ -95,6 +95,7 @@
   float: left;
   padding: 30px;
   margin: 10px;
+  text-align: center;
 }
 
 .Footer{
@@ -105,6 +106,7 @@
   bottom: 0;
   width: 100%;
   height: 40px;
+  text-align: center;
 }
 
 .NavLinks {
@@ -116,7 +118,14 @@
 .Logo {
   left:0;
   float: left;
-  margin-right: 470px;
+  margin-right: 270px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.Logo:hover {
+-webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
 }
 
 .SearchBar {
@@ -127,8 +136,21 @@
   width: 400px;
 }
 
+
+
+.Search:focus {
+  width: 100%;
+}
+
 .Submit {
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.Submit:hover {
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: lightgray;
 }
 
 .FlipCard{
@@ -162,7 +184,198 @@
 }
 
 .Flippy {
-  background-color: gray;
   z-index: 8888;
   border-radius: 15px;
+  text-align: center;
+}
+
+.MeetupCard {
+  background-color: black;
+  padding: 10px;
+  margin: 15px;
+  margin-bottom: 40px;
+  border-radius: 100px 0px;
+  text-align: center;
+  color: white;
+  height: 40px;
+  opacity:0.5;
+}
+
+  .MeetupCard:hover {
+    opacity:1;
+    border-radius:50%;
+    cursor: pointer;
+  }
+
+  a:link, a:visited {
+    color: black;
+    padding: 1px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  a:hover, a:active {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    cursor: pointer;
+  }
+
+  .Signin {
+    margin-top: 200px;
+    text-align: center;
+  }
+
+  .Signup {
+    float: left;
+    width: 30%;
+    padding: 30px;
+    margin: 10px;
+    margin-left: 200px;
+  }
+
+  .Checkboxes {
+    float: left;
+    width: 30%;
+    padding: 30px;
+    margin-top: 220px;
+    column-count: 2;
+  }
+
+  .CommentCard:hover {
+    font-weight: 700;
+  }
+
+  .RightComponent:hover {
+    font-weight: 700;
+  }
+
+  .MeetupDetails {
+    text-align: center;
+    margin-right: 30px;
+    margin-top: 50px;
+    margin-left: 30px;
+  }
+
+  .CenterComponentProfile {
+    background-color: white;
+    width: 40%;
+    float: left;
+    padding: 30px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .ScrollingList {
+    padding-top: 600px;
+    animation: marquee infinite 60s linear;
+  }
+
+  @keyframes marquee {
+    0%   { 
+      -moz-transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0); }
+      100% { 
+      -moz-transform: translate(0, -100%);
+      -webkit-transform: translate(0, -100%);
+      transform: translate(0, -100%); }
+  }
+
+  .CreateMeetupBtn {
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .CreateMeetupBtn:hover {
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+  }
+
+  .MeetupForm {
+    width: 60%;
+    padding: 5px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .MeetupForm:focus {
+    border: 2px solid black;
+  }
+
+  .OutsideForm {
+    border: 10px solid;
+    margin: 10px; 
+    padding: 10px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+  }
+
+  .OutsideForm:hover {
+    opacity:1;
+  }
+
+  .SignInForm {
+    width: 30%;
+    padding: 5px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .SignInForm:focus {
+    border: 2px solid black;
+  }
+
+  .SignUpInput {
+    width: 30%;
+    padding: 5px 20px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .SignUpInput:focus {
+    border: 2px solid black;
+  }
+
+  .checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox > span {
+    color: #34495E;
+    padding: 0.5rem 0.23rem;
+}
+
+.checkbox > input {
+    height: 20px;
+    width: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid white;
+    border-radius: 15px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: black;
+    cursor: pointer;
+  }
+
+.checkbox > input:checked {
+    border: 5px solid black;
+    background-color: white;
+}
+
+.checkbox > input:active {
+    border: 2px solid #34495E;
 }

@@ -4,6 +4,8 @@ import Footer from "./Footer";
 import SearchContainer from "./SearchContainer";
 import AllThree from "./AllThree";
 
+const userId = 0;
+
 class MainPage extends Component {
   constructor() {
     super();
@@ -11,6 +13,9 @@ class MainPage extends Component {
     this.state = {
       meetups: [],
       searchWord: "",
+      user: {},
+      comments: [],
+      clickedMeetup: null,
     };
   }
 
@@ -22,32 +27,39 @@ class MainPage extends Component {
         this.setState({ meetups });
       });
 
-      // USE this to login in and perist users to the db
-      fetch('http://localhost:3000/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify({
-          user: {
-            first_name: "jan",
-            email: "jan@jan.com",
-            password: "j",
-          }
-        })
-      })
-        .then(r => r.json())
-        .then(console.log)
+    fetch(`http://localhost:3000/users/${window.userId}`)
+      .then((response) => response.json())
+      .then((user) => {
+        this.setState({ user });
+      });
+
+    fetch(`http://localhost:3000/comments`)
+      .then((response) => response.json())
+      .then((comments) => {
+        this.setState({ comments });
+      });
   }
 
-
-
+  rerender = (clickedMeetup) => {
+    fetch(`http://localhost:3000/meetups/${clickedMeetup.id}`)
+      .then((response) => response.json())
+      .then((meetup) => {console.log(meetup) 
+        this.setState({ clickedMeetup: meetup });
+      });
+      
+  };
 
   handleChange = (event) => {
     console.log("Event Target Value is", event.target.value);
     this.setState({
       searchWord: event.target.value,
+    });
+  };
+
+  joinMeetup = (meetup) => {
+    console.log("join", meetup.id);
+    this.setState({
+      clickedMeetup: meetup,
     });
   };
 
@@ -71,6 +83,11 @@ class MainPage extends Component {
         <AllThree
           meetups={this.state.meetups}
           filteredMeetups={filteredMeetups}
+          user={this.state.user}
+          comments={this.state.comments}
+          joinMeetup={this.joinMeetup}
+          clickedMeetup={this.state.clickedMeetup}
+          rerender={this.rerender}
         />
         <Footer />
       </div>
