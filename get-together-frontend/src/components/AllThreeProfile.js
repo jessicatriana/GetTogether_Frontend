@@ -44,6 +44,7 @@ class AllThreeProfile extends Component {
         <RightComponent
           userTopics={this.props.userInfo.topics}
           user={this.props.userInfo}
+          rerender={this.props.rerender}
         />
       </div>
     );

@@ -43,7 +43,7 @@ class MainPage extends Component {
   rerender = (clickedMeetup) => {
     fetch(`http://localhost:3000/meetups/${clickedMeetup.id}`)
       .then((response) => response.json())
-      .then((meetup) => {console.log(meetup) 
+      .then((meetup) => {console.log("THIS", meetup) 
         this.setState({ clickedMeetup: meetup });
       });
       
@@ -57,7 +57,7 @@ class MainPage extends Component {
   };
 
   joinMeetup = (meetup) => {
-    console.log("join", meetup.id);
+    console.log("join", meetup);
     this.setState({
       clickedMeetup: meetup,
     });

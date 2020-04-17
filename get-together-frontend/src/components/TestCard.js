@@ -31,7 +31,8 @@ class TestCard extends Component {
         </FrontSide>
         <BackSide
           style={{
-            backgroundColor: "#000000",
+            backgroundColor: "#264C99",
+            // backgroundColor: "#000000",
             color: "#FFFFFF",
             textAlign: "center",
             borderRadius: "15px",

@@ -113,7 +113,7 @@ class Signup extends Component {
               <br />
               <br />
 
-              <input type="submit" className="Submit" />
+              <input type="submit" className="SignInBtn" />
             </form>
           </div>
         </div>

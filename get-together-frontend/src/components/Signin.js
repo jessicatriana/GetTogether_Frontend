@@ -44,7 +44,7 @@ class Signin extends Component {
     fetch(`http://localhost:3000/users/login`, configObj)
       .then((resp) => resp.json())
       .then((user) => {
-
+        console.log(user)
         if (user.id === undefined || user.id === 0) {
           console.log("Not logged in");
         } else {
@@ -97,7 +97,7 @@ class Signin extends Component {
             />
             <br />
             <br />
-            <input type="submit" className="Submit" />
+            <input type="submit" className="SignInBtn" />
           </form>
         </div>
         <Footer />
