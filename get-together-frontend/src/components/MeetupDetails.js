@@ -80,11 +80,12 @@ class MeetupDetails extends Component {
             <h3>Comments </h3>
             {this.props.clickedMeetup.comments &&
               this.props.clickedMeetup.comments.map((c) => {
-                return <p style={{ textAlign: "left" }}>"{c.content}"</p>;
+                // console.log(c)
+                return <p style={{ textAlign: "center", backgroundColor: "WhiteSmoke" }}>"{c.content}"</p>;
               })}
             <br />
             <button
-              className="Submit"
+              className="SignInBtn"
               onClick={() => this.handleClick(this.props.clickedMeetup)}
             >
               Join Meetup

@@ -11,7 +11,7 @@ class CenterComponentProfile extends Component {
             <h2>Email: {this.props.userDetails.email}</h2>
 
             <p>Have a meetup in mind? Create one!</p>
-            <button className="CreateMeetupBtn" onClick={this.props.handleClick}>
+            <button className="SignInBtn" onClick={this.props.handleClick}>
               Create a New Meetup
             </button>
             <br/>  <br/>

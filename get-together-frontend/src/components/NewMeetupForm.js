@@ -126,7 +126,7 @@ class NewMeetupForm extends Component {
               <br />
               <br />
               <br />
-              <input type="submit" className="Submit"></input>
+              <input type="submit" className="SignInBtn"></input>
             </form>
           </div>
         </div>
